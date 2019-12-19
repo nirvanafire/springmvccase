@@ -34,6 +34,22 @@ public class UploadController {
         return "success";
     }
 
+    @PostMapping("/upload_servlet_multi")
+    public String uploadServletMulti(@RequestPart("files") MultipartFile[] files) {
+
+        System.out.println("---Run Upload Servlet3.0 Multi---");
+
+        StringBuffer sb = new StringBuffer("上传文件名分别为:");
+        for (MultipartFile file : files) {
+            sb.append(file.getOriginalFilename() + ":" + file.getSize()).append(",");
+            storeFile(file);
+        }
+
+        System.out.println("---多文件上传:" + sb.toString() + "---");
+
+        return "success";
+    }
+
     private void storeFile(MultipartFile file) {
         try {
 
