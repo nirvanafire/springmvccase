@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringMVC-UploadFile</title>
+</head>
+<body>
+    <h1>SpringMVC-UploadFile</h1>
+
+    <hr>
+    <h2>Apache Commons FileUpload</h2>
+    <form action="/upload_commons.do" enctype="multipart/form-data" method="post">
+        <input type="file" name="file">
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <h2>Servlet3.0</h2>
+    <form action="/upload_servlet.do" enctype="multipart/form-data" method="post">
+        <input type="file" name="file">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
